@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
   <meta name="theme-color" content="#18283d">
-  <title>Castle Defender — The Enchanted Keep</title>
+  <title>Cyber Castle — Neon Keep Defense</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="game-shell">
     <header class="topbar">
-      <div class="brand"><div class="brand-mark">✦</div><div><span class="eyebrow">THE ENCHANTED KEEP</span><h1>Castle Defender</h1></div></div>
+      <div class="brand"><div class="brand-mark">✦</div><div><span class="eyebrow">NEON KEEP // DEFENSE GRID</span><h1>Cyber Castle</h1></div></div>
       <button class="icon-btn" id="soundBtn" aria-label="Toggle sound">♫</button>
       <button class="icon-btn" id="pauseBtn" aria-label="Pause game">Ⅱ</button>
     </header>
@@ -23,25 +23,27 @@
 
     <section class="arena-wrap">
       <div class="arena-topline"><div class="wave-pill"><span class="live-dot"></span> WAVE <b id="waveCount">1</b></div><div class="wave-progress"><span id="waveLabel">THE GOBLIN SCOUTS</span><div class="progress-track"><i id="waveBar"></i></div></div><div class="enemy-count" id="enemyCount">0 LEFT</div></div>
-      <div class="canvas-frame"><canvas id="game" aria-label="Castle defense battlefield"></canvas><div class="float-hint" id="hint">Tap an enemy to mark your target</div><div class="banner" id="banner"></div><div class="game-over" id="gameOver"><div class="end-card"><div class="end-crown">♛</div><p class="eyebrow">THE KEEP HAS FALLEN</p><h2>Every hero needs a rest.</h2><p>Your brave defense earned <b id="finalGold">0</b> gold.</p><button class="primary-btn" id="retryBtn">Defend again <span>↻</span></button></div></div></div>
-      <div class="arena-caption"><span><i class="sun-dot"></i> SUNLIT MEADOW</span><span id="weatherText">A peaceful day… for now</span></div>
+      <div class="canvas-frame"><canvas id="game" aria-label="Cyberpunk castle defense battlefield"></canvas><div class="upcoming" id="upcoming" aria-label="Upcoming opponents"></div><div class="float-hint" id="hint">Tap a foe to lock your target</div><div class="banner" id="banner"></div><div class="game-over" id="gameOver"><div class="end-card"><div class="end-crown">♛</div><p class="eyebrow">THE KEEP HAS FALLEN</p><h2>Every hero needs a rest.</h2><p>Your brave defense earned <b id="finalGold">0</b> gold.</p><button class="primary-btn" id="retryBtn">Defend again <span>↻</span></button></div></div></div>
+      <div class="arena-caption"><span><i class="sun-dot" id="dayDot"></i> <b id="timeLabel">DAY SHIFT</b></span><span id="weatherText">Neon defenses online</span></div>
     </section>
 
     <section class="hero-panel">
       <div class="hero-heading"><div><span class="eyebrow">YOUR CHAMPION</span><h2><span id="heroTitle">Willow</span> <span class="level-tag">LV <b id="heroLevel">1</b></span></h2></div><button class="wardrobe-btn" id="wardrobeBtn"><span>✦</span> OUTFIT</button></div>
       <div class="xp-row"><span>XP</span><div class="xp-track"><i id="xpBar"></i></div><b id="xpText">0 / 30</b></div>
-      <div class="hero-bottom"><div class="outfit-chip"><span id="outfitEmoji">🌿</span><div><small>WEARING</small><b id="outfitName">Meadow Scout</b></div></div><div class="buff-chip"><span>⚡</span><div><small>BUFF</small><b id="buffName">Swift Arrows</b></div></div><button class="upgrade-btn" id="upgradeBtn"><span>⬆</span><div><b>UPGRADE</b><small id="upgradeCost">20 gold</small></div></button></div>
+      <div class="hero-bottom"><div class="outfit-chip"><span id="outfitEmoji">🦾</span><div><small>WEARING</small><b id="outfitName">Neon Runner</b></div></div><div class="buff-chip"><span>⚡</span><div><small>BUFF</small><b id="buffName">Overclock</b></div></div><button class="upgrade-btn" id="upgradeBtn"><span>⬆</span><div><b>UPGRADE</b><small id="upgradeCost">20 gold</small></div></button></div>
+      <div class="weapon-bar"><span>LOADOUT</span><button id="weaponBtn" aria-label="Change weapon"><i id="weaponIcon">🔫</i><b id="weaponName">PULSE RIFLE</b><small id="weaponHint">▶ cycle</small></button></div>
     </section>
 
     <section class="controls-panel">
       <div class="controls-label"><span class="eyebrow">BATTLE SKILLS</span><span>Tap to unleash</span></div>
       <div class="skill-row">
         <button class="skill-btn frost" id="frostBtn"><span class="skill-art">❄</span><span class="skill-text"><b>FROST NOVA</b><small>Freeze all foes</small></span><span class="skill-cost" id="frostCost">⚡ 35</span><i class="cooldown-shade"></i></button>
-        <button class="skill-btn storm" id="stormBtn"><span class="skill-art">ϟ</span><span class="skill-text"><b>STARFALL</b><small>Smite a target</small></span><span class="skill-cost" id="stormCost">⚡ 50</span><i class="cooldown-shade"></i></button>
+        <button class="skill-btn storm" id="stormBtn"><span class="skill-art">☄</span><span class="skill-text"><b>STARFALL</b><small>Smite a target</small></span><span class="skill-cost" id="stormCost">⚡ 50</span><i class="cooldown-shade"></i></button>
+         <button class="skill-btn helper" id="helperBtn"><span class="skill-art">🤖</span><span class="skill-text"><b>CASTLE HELPERS</b><small>Deploy 2 drones</small></span><span class="skill-cost" id="helperCost">⚡ 40</span><i class="cooldown-shade"></i></button>
       </div>
       <div class="mana-line"><span>✧ MANA</span><div class="mana-track"><i id="manaBar"></i></div><b id="manaText">100 / 100</b></div>
     </section>
-    <footer><span>✿</span> Protect the little kingdom <span>✿</span></footer>
+    <footer><span>✦</span> Defend the Neon Keep <span>✦</span></footer>
   </main>
 
   <div class="modal-backdrop" id="modalBackdrop">
